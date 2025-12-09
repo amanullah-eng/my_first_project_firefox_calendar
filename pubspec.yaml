@@ -57,6 +57,7 @@ dependencies:
   #local_auth: ^2.1.6
   local_auth_android: ^1.0.32
   local_auth_darwin: ^1.0.4
+  #local_auth: ^2.1.0
 
 dev_dependencies:
   flutter_test:
