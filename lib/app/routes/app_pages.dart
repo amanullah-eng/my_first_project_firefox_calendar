@@ -2,7 +2,10 @@ import 'package:firefox_calender/presentation/auth/views/calendar_screen.dart';
 import 'package:firefox_calender/presentation/auth/views/create_account_screens.dart';
 import 'package:firefox_calender/presentation/auth/views/create_event_screen.dart';
 import 'package:firefox_calender/presentation/auth/views/forget_password_screen.dart';
+import 'package:firefox_calender/presentation/auth/views/hours_screen.dart';
 import 'package:firefox_calender/presentation/auth/views/login_screen.dart';
+import 'package:firefox_calender/presentation/auth/views/payroll_screen_updated.dart';
+import 'package:firefox_calender/presentation/auth/views/settings_screen.dart';
 import 'package:firefox_calender/presentation/home/dashbord_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -60,22 +63,24 @@ class AppPages {
       transition: Transition.rightToLeft,
       transitionDuration: const Duration(milliseconds: 300),
     ),
-    // Placeholder pages for navigation items
+    // Hours Page - Converted from React with tabs functionality
     GetPage(
       name: AppRoutes.hours,
-      page: () => const PlaceholderScreen(title: 'Hours'),
+      page: () => const HoursScreen(),
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 300),
     ),
+    // Payroll Page - Converted from React with admin/employee views
     GetPage(
       name: AppRoutes.payroll,
-      page: () => const PlaceholderScreen(title: 'Payroll'),
+      page: () => const PayrollScreen(),
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 300),
     ),
+    // Settings Page - Converted from React with profile and leave sections
     GetPage(
       name: AppRoutes.settings,
-      page: () => const PlaceholderScreen(title: 'Settings'),
+      page: () => const SettingsScreen(),
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 300),
     ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:firefox_calender/app/theme/app_colors.dart';
 import 'package:firefox_calender/presentation/auth/controllers/dashboard_controller.dart';
 
 /// Dashboard Next Event Card

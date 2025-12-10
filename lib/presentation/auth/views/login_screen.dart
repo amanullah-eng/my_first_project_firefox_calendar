@@ -339,7 +339,7 @@ class LoginScreen extends GetView<LoginController> {
     final buttonSize = isSmallScreen ? 36.0 : 40.0;
     final iconSize = isSmallScreen ? 16.0 : 20.0; // h-4 w-4 sm:h-5 sm:w-5
 
-    return Obx(() => Container(
+    return Obx(() => SizedBox(
       // flex-shrink-0 equivalent - fixed dimensions
       width: buttonSize,
       height: buttonSize,

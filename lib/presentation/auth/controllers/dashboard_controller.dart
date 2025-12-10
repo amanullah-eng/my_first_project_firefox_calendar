@@ -58,7 +58,7 @@ class DashboardController extends GetxController {
   /// Load check-in status
   void _loadCheckInStatus() {
     final today = DateTime.now().toIso8601String().split('T')[0];
-    final checkInData = storage.read('checkIn_$userEmail.value\_$today');
+    final checkInData = storage.read('checkIn_$userEmail.value_$today');
     
     if (checkInData != null) {
       todayCheckInTime.value = checkInData['checkInTime'] ?? '';

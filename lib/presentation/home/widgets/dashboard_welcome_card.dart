@@ -51,6 +51,10 @@ class DashboardWelcomeCard extends GetView<DashboardController> {
                 backgroundImage: controller.userProfilePicture.value.isNotEmpty
                     ? NetworkImage(controller.userProfilePicture.value)
                     : null,
+                onBackgroundImageError:
+                    controller.userProfilePicture.value.isNotEmpty
+                    ? (exception, stackTrace) {}
+                    : null,
                 child: controller.userProfilePicture.value.isEmpty
                     ? Text(
                         _getInitials(controller.userName.value),
@@ -59,10 +63,6 @@ class DashboardWelcomeCard extends GetView<DashboardController> {
                           fontWeight: FontWeight.w600,
                         ),
                       )
-                    : null,
-                onBackgroundImageError:
-                    controller.userProfilePicture.value.isNotEmpty
-                    ? (exception, stackTrace) {}
                     : null,
               ),
             ),
