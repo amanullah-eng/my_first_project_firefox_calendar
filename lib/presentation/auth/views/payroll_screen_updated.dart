@@ -1,5 +1,6 @@
 import 'package:firefox_calender/presentation/auth/views/wiggets/employee_detail_popup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:firefox_calender/app/theme/app_colors.dart';
 import 'package:firefox_calender/app/theme/app_text_styles.dart';
@@ -662,44 +663,46 @@ class PayrollScreen extends GetView<PayrollController> {
 
   /// Build work hours grid for employee view
   Widget _buildWorkHoursGrid(Employee employee, bool isDark) {
+    
     final hoursData = [
-      {
-        'icon': Icons.access_time,
-        'color': Colors.blue.shade600,
-        'value': '${employee.hoursToday}h',
-        'label': 'Hours Today',
-      },
-      {
-        'icon': Icons.access_time_rounded,
-        'color': Colors.green.shade600,
-        'value': '${employee.hoursWeek}h',
-        'label': 'Hours This Week',
-      },
-      {
-        'icon': Icons.umbrella,
-        'color': Colors.red.shade600,
-        'value': '${employee.leaveTakenThisWeek}',
-        'label': 'Leave Taken This Week',
-      },
-      {
-        'icon': Icons.umbrella,
-        'color': Colors.teal.shade600,
-        'value': '${employee.annualLeaveAccrued}',
-        'label': 'Annual Leave Accrued',
-      },
-      {
-        'icon': Icons.umbrella,
-        'color': Colors.purple.shade600,
-        'value': '${employee.personalLeaveAccrued}',
-        'label': 'Personal Leave Accrued',
-      },
-      {
-        'icon': Icons.umbrella,
-        'color': Colors.orange.shade600,
-        'value': '${employee.daysInLeaveAccrued}',
-        'label': 'Days in Lieu Accrued',
-      },
-    ];
+  {
+    'icon': SvgPicture.asset('assets/images/Icon.svg'),
+    'color': Colors.blue.shade600,
+    'value': '${employee.hoursToday}h',
+    'label': 'Hours Today',
+  },
+  {
+    'icon': SvgPicture.asset('assets/images/Icon (1).svg'),
+    'color': Colors.green.shade600,
+    'value': '${employee.hoursWeek}h',
+    'label': 'Hours This Week',
+  },
+  {
+    'icon': SvgPicture.asset('assets/images/Icon (2).svg'),
+    'color': Colors.red.shade600,
+    'value': '${employee.leaveTakenThisWeek}',
+    'label': 'Leave Taken This Week',
+  },
+  {
+    'icon': SvgPicture.asset('assets/images/Icon (3).svg'),
+    'color': Colors.teal.shade600,
+    'value': '${employee.annualLeaveAccrued}',
+    'label': 'Annual Leave Accrued',
+  },
+  {
+    'icon': SvgPicture.asset('assets/images/Icon (4).svg'),
+    'color': Colors.purple.shade600,
+    'value': '${employee.personalLeaveAccrued}',
+    'label': 'Personal Leave Accrued',
+  },
+  {
+    'icon': SvgPicture.asset('assets/images/Icon (5).svg'),
+    'color': Colors.orange.shade600,
+    'value': '${employee.daysInLeaveAccrued}',
+    'label': 'Days in Lieu Accrued',
+  },
+];
+
 
     return GridView.count(
       crossAxisCount: 2,
@@ -721,11 +724,12 @@ class PayrollScreen extends GetView<PayrollController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    
             children: [
-              Icon(
-                data['icon'] as IconData,
-                size: 20,
-                color: data['color'] as Color,
+              SizedBox(
+                height: 24,
+                width: 24,
+                child: data['icon'] as Widget,   // <-- SVG widget here
               ),
               const SizedBox(height: 8),
               Text(
@@ -748,6 +752,7 @@ class PayrollScreen extends GetView<PayrollController> {
                 overflow: TextOverflow.ellipsis,
               ),
             ],
+
           ),
         );
       }).toList(),

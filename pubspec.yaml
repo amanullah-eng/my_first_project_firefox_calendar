@@ -79,6 +79,14 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/firefox_logo.png
+    - assets/images/Icon.svg
+    - assets/images/Icon (1).svg
+    - assets/images/Icon (2).svg
+    - assets/images/Icon (3).svg
+    - assets/images/Icon (4).svg
+    - assets/images/Icon (5).svg
+    - assets/images/Icon (6).svg
+    - assets/images/Icon (7).svg
 
   #   - images/a_dot_ham.jpeg
 
